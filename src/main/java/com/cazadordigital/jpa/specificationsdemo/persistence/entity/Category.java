@@ -1,5 +1,6 @@
 package com.cazadordigital.jpa.specificationsdemo.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
@@ -14,6 +15,7 @@ public class Category {
     private String name;
 
 
+    @JsonBackReference
     @OneToMany(mappedBy = "category")
     private List<Product> products;
 
